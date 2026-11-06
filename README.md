@@ -1,7 +1,5 @@
 # usbkill-ng
 
-By 1024cyber (https://github.com/1024cyber) | [Twitter](https://twitter.com/1024cyber)
-
 Lock, shut down or restart a Linux computer when a USB device is plugged in or removed.
 
 usbkill-ng watches your USB ports. When a device is added or removed, it can lock the screen, shut
@@ -307,7 +305,6 @@ python3 -m unittest discover -v
 Runs the test suite (no hardware needed; power commands are faked).
 
 ## Author
-
 Innocent I.
 
 - GitHub: (https://github.com/1024cyber)
