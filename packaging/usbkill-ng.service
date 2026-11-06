@@ -1,0 +1,25 @@
+[Unit]
+Description=usbkill-ng: lock, shut down or restart when USB devices change
+Documentation=https://github.com/1024cyber/usbkill-ng file:///opt/usbkill-ng/README.md
+# No After=multi-user.target on purpose: that target pulls this service in (WantedBy), so
+# ordering the service after it would create an ordering loop.
+After=systemd-logind.service systemd-udevd.service
+# Boot-loop protection: if this file exists the service does not start. Create it from a
+# recovery shell or live USB:  touch /etc/usbkill/disabled
+ConditionPathExists=!/etc/usbkill/disabled
+ConditionPathExists=/etc/usbkill/usbkill.ini
+# Give up after 5 failed starts in a minute instead of retrying forever.
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+# --arm-delay: grace period so devices that enumerate late during boot cannot trigger it.
+# --yes: skips the interactive YES question (there is no terminal in a service).
+ExecStart=/usr/local/bin/usbkill-ng --live --watch --yes --arm-delay 20
+# A shutdown/restart ends the service with exit code 0 on purpose; only real failures restart it.
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

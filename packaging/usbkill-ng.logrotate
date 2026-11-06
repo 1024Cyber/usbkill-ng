@@ -1,0 +1,11 @@
+# Keeps /var/log/usbkill/usbkill.log from growing forever.
+# copytruncate: the running service keeps its open file, so no restart is needed.
+/var/log/usbkill/usbkill.log {
+    weekly
+    rotate 8
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}

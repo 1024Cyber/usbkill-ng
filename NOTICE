@@ -1,0 +1,24 @@
+usbkill-ng
+Copyright (C) 2026 Innocent I. <https://github.com/1024cyber>
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version. It is distributed WITHOUT ANY WARRANTY;
+see the file LICENSE for the full text.
+
+Author
+------
+Innocent I.
+GitHub:  https://github.com/1024cyber
+Twitter: https://twitter.com/1024cyber
+
+Credits
+-------
+usbkill-ng is an independent rewrite inspired by "usbkill" by Hephaestos
+<hephaestos@riseup.net>, https://github.com/hephaest0s/usbkill (GPL-3.0-or-later).
+The idea, the name and the goal of the original project are credited to its author. usbkill-ng
+was written from an audit of that project; it replaces its USB detection, configuration,
+actions and packaging, and deliberately does not carry over its file-shredding, RAM/swap
+wiping or self-delete features.
+
+Use only on computers you own or are authorised to administer.
